@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a presentuu</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .cakeGIF {
+            width: 290px;
+            height: 350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background-color: bisque;
+            position: relative;
+            padding-bottom: 20px;
+            border-radius: 10px;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .circle-text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        text {
+            font-size: 21px;
+            font-family: Geneva, Tahoma, Verdana, sans-serif;
+            font-weight: bold;
+            fill: #834b4b;
+        }
+        .oldGIF {
+            width: 290px;
+            height: 350px;
+            margin: 0 auto;
+            display: none;
+            justify-content: center;
+            align-items: flex-end;
+            background-color: rgb(227, 227, 227);
+            position: relative;
+            padding-bottom: 20px;
+            border-radius: 10px;
+        }
+        .oldGIF p{
+            font-size: 21px;
+            font-family: Geneva, Tahoma, Verdana, sans-serif;
+            font-weight: bold;
+            fill: #ffffff;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+        }
+        .ops{
+            top: 63%;
+            left: 60%;
+        }
+        .sen{
+            top: 70%;
+            left: 70%;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+    <script>
+    setTimeout(() => {
+    let cake = document.querySelector('.cakeGIF');
+    
+    //falling animation
+    cake.style.transition = "top 10s ease-in-out";
+    cake.style.top = "100vh"; 
+
+    //disappear cake div
+    setTimeout(() => {
+        cake.style.display = "none"; 
+    }, 10); 
+    }, 5000);
+
+    setTimeout(() => {
+    let cake = document.querySelector('.oldGIF');
+    setTimeout(() => {
+        cake.style.display = "flex";
+    }, 10); 
+    }, 5000); 
+    </script>
+</head>
+<body>
+    <div class="cakeGIF">
+        <div class="circle-text-container">
+            <svg width="290" height="150">
+                <defs>
+                    <path id="curve" d="M 10,195 A 150,150 0 0,1 280,195" fill="transparent"/>
+                </defs>
+                <text font-size="18" font-weight="bold" fill="black">
+                    <textPath href="#curve" startOffset="50%" text-anchor="middle">
+                        Happy 26th birthday Ramy &lt;3
+                    </textPath>
+                </text>
+            </svg>
+        </div>
+        <img src="assets/cakeGIF.gif" alt="Cake GIF" class="cake">
+    </div>
+
+    <div class="oldGIF">
+        <p class="ops">Oops ... </p>
+        <p class="sen">You are old now !!</p>
+        <img src="assets/oldGIF.gif" alt="Old GIF" class="old">
+    </div>
+</body>
+</html>
